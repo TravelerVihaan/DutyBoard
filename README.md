@@ -8,4 +8,5 @@ This is light web app to control passing duty of presentations and test-checking
 * JDK 14
 * SpringBoot 2
 * Thymeleaf + HTML
+* Maven
 * Maybe I use here any database, but now I have some alternative conceptions.
