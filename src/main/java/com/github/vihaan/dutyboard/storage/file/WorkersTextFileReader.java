@@ -12,18 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class WorkersFileReader {
+public class WorkersTextFileReader implements IWorkersFileReader {
 
     public List<Worker> loadWorkers(String filePath){
         List<String> parsedWorkers = readWorkersFromFile(filePath);
-        parsedWorkers.stream().map();
+        //parsedWorkers.stream().map();
+        return null;
     }
 
     private List<String> readWorkersFromFile(String filePath){
         List<String> parsedWorkers = new ArrayList<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
-            stream.forEach(line -> parsedWorkers.add(line));
+            stream.forEach(parsedWorkers::add);
         }catch (FileNotFoundException e){
             logger.warn(FileMessages.FILE_NOT_FOUND);
         }catch (IOException e){
@@ -33,5 +34,6 @@ public class WorkersFileReader {
         return parsedWorkers;
     }
 
-    private static final Logger logger = LoggerFactory.getLogger(WorkersFileReader.class);
+    private static final String TXT_FILE_PATH = "";
+    private static final Logger logger = LoggerFactory.getLogger(WorkersTextFileReader.class);
 }

@@ -8,5 +8,5 @@ public class DutyPassService {
 
     private List<Worker> workersList;
 
-    public DutyPassService() {
+    public DutyPassService() {}
 }
