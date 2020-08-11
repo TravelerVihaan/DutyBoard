@@ -28,7 +28,12 @@ public class Board implements IBoard {
     }
 
     @Override
+    public List<Worker> getWorkersListOnBoard() {
+        return workersOnBoard;
+    }
+
+    @Override
     public List<Worker> getAllWorkersOnBoard() {
-        return null;
+        return workersOnBoard;
     }
 }
