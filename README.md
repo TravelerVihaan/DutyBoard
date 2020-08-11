@@ -10,3 +10,6 @@ This is light web app to control passing duty of presentations and test-checking
 * Thymeleaf + HTML
 * Maven
 * Maybe I use here any database, but now I have some alternative conceptions.
+
+### Package
+Single JAR file
