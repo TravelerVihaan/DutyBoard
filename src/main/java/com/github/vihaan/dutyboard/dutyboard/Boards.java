@@ -14,6 +14,8 @@ public class Boards {
         return boards.get(boardName);
     }
 
+    public Map<String, IBoard> getBoards(){ return boards; }
+
     public void addBoard(String boardName, IBoard board){
         boards.put(boardName, board);
     }

@@ -23,6 +23,11 @@ public class Board implements IBoard {
         return workerOnDuty;
     }
 
+    @Override
+    public void setActiveWorkerOnDuty(Worker worker) {
+        workerOnDuty = worker;
+    }
+
     public DutyType getTypeOfDuty() {
         return typeOfDuty;
     }
@@ -30,6 +35,11 @@ public class Board implements IBoard {
     @Override
     public List<Worker> getWorkersListOnBoard() {
         return workersOnBoard;
+    }
+
+    @Override
+    public Iterator<Worker> getWorkerIterator() {
+        return workersIterator;
     }
 
     @Override
