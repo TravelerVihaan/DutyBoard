@@ -13,9 +13,10 @@ public class Board implements IBoard {
     private Worker workerOnDuty;
     private final DutyType typeOfDuty;
 
-    public Board(DutyType typeOfDuty) {
+    public Board(List<Worker> workersOnBoard, DutyType typeOfDuty) {
+        this.workersOnBoard = workersOnBoard;
         this.typeOfDuty = typeOfDuty;
-        workersIterator = workersOnBoard.iterator();
+        workersIterator = this.workersOnBoard.iterator();
     }
 
     @Override
