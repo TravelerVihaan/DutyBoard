@@ -20,7 +20,7 @@ public class DutyPassService {
 
     private void changeWorkerOnDuty(IBoard board){
         if(!board.getWorkerIterator().hasNext()) {
-            board.getWorkerIterator();
+            board.setWorkersIterator(board.getAllWorkersOnBoard().iterator());
         }
         board.setActiveWorkerOnDuty(board.getWorkerIterator().next());
         }

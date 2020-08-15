@@ -29,18 +29,18 @@ public class Board implements IBoard {
         workerOnDuty = worker;
     }
 
+    @Override
     public DutyType getTypeOfDuty() {
         return typeOfDuty;
     }
 
     @Override
-    public List<Worker> getWorkersListOnBoard() {
-        return workersOnBoard;
-    }
-
-    @Override
     public Iterator<Worker> getWorkerIterator() {
         return workersIterator;
+    }
+
+    public void setWorkersIterator(Iterator<Worker> workersIterator) {
+        this.workersIterator = workersIterator;
     }
 
     @Override

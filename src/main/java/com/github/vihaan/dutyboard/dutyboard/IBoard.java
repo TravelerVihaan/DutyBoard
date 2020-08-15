@@ -16,7 +16,7 @@ public interface IBoard{
 
     DutyType getTypeOfDuty();
 
-    List<Worker> getWorkersListOnBoard();
-
     Iterator<Worker> getWorkerIterator();
+
+    void setWorkersIterator(Iterator<Worker> workersIterator);
 }
