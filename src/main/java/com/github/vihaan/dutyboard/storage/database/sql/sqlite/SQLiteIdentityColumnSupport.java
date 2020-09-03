@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.storage.database.sqlite;
+package com.github.vihaan.dutyboard.storage.database.sql.sqlite;
 
 import org.hibernate.MappingException;
 import org.hibernate.dialect.identity.IdentityColumnSupportImpl;

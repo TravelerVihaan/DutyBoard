@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.storage.database.sqlite;
+package com.github.vihaan.dutyboard.storage.database.sql.sqlite;
 
 import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.function.SQLFunctionTemplate;

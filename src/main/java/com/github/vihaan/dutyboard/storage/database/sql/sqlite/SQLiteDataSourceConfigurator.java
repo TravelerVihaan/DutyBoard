@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.storage.database.sqlite;
+package com.github.vihaan.dutyboard.storage.database.sql.sqlite;
 
 import com.github.vihaan.dutyboard.storage.database.DataSourceConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,6 @@ public class SQLiteDataSourceConfigurator implements DataSourceConfigurator {
     @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        //noinspection ConstantConditions
         dataSource.setDriverClassName(env.getProperty("org.sqlite.JDBC"));
         dataSource.setUrl(env.getProperty("jdbc:sqlite:DutyBoardDatabase.db"));
         return dataSource;
