@@ -22,10 +22,9 @@ public class SQLiteDataSourceConfigurator implements DataSourceConfigurator {
     @Bean
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("driverClassName"));
-        dataSource.setUrl(env.getProperty("url"));
-        dataSource.setUsername(env.getProperty("user"));
-        dataSource.setPassword(env.getProperty("password"));
+        //noinspection ConstantConditions
+        dataSource.setDriverClassName(env.getProperty("org.sqlite.JDBC"));
+        dataSource.setUrl(env.getProperty("jdbc:sqlite:DutyBoardDatabase.db"));
         return dataSource;
     }
 }
