@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.storage.database.mongo;
+package com.github.vihaan.dutyboard.storage.database.mongo.entities;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.annotation.Id;

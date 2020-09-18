@@ -1,7 +1,7 @@
 package com.github.vihaan.dutyboard.storage.database;
 
-import com.github.vihaan.dutyboard.storage.database.mongo.DutyTypeMongoRepository;
-import com.github.vihaan.dutyboard.storage.database.mongo.WorkerMongoRepository;
+import com.github.vihaan.dutyboard.storage.database.mongo.repositories.DutyTypeMongoRepository;
+import com.github.vihaan.dutyboard.storage.database.mongo.repositories.WorkerMongoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;

@@ -1,39 +1,33 @@
-package com.github.vihaan.dutyboard.storage.database.sql;
+package com.github.vihaan.dutyboard.storage.database.mongo.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.Objects;
 
-@Entity
+@Document
 public class WorkerEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @NotEmpty
+    private String id;
     private String name;
-    @NotEmpty
     private String surname;
-    @NotEmpty
     private String visibleName;
 
     public WorkerEntity() { }
 
-    public WorkerEntity(Long id, String name, String surname, String visibleName) {
+    public WorkerEntity(String id, String name, String surname, String visibleName) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.visibleName = visibleName;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -66,7 +60,8 @@ public class WorkerEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WorkerEntity that = (WorkerEntity) o;
-        return Objects.equals(name, that.name) &&
+        return Objects.equals(id, that.id) &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(surname, that.surname) &&
                 Objects.equals(visibleName, that.visibleName);
     }

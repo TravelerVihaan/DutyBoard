@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.storage.database.sql;
+package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
