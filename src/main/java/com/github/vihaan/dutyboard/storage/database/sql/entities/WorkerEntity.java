@@ -20,7 +20,6 @@ public class WorkerEntity {
     private String visibleName;
 
     public WorkerEntity() { }
-
     public WorkerEntity(Long id, String name, String surname, String visibleName) {
         this.id = id;
         this.name = name;

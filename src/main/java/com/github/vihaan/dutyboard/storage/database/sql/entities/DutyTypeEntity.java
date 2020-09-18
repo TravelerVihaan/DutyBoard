@@ -1,6 +1,7 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 @Entity
@@ -11,6 +12,8 @@ public class DutyTypeEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_duty")
     private Long id;
+
+    @NotEmpty
     private String dutyType;
 
     public DutyTypeEntity() {}
