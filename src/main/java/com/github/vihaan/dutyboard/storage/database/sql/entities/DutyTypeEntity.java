@@ -1,16 +1,15 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "duty_type")
 public class DutyTypeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_duty")
     private Long id;
     private String dutyType;
 

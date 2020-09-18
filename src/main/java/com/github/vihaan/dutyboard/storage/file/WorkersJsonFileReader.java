@@ -1,5 +1,6 @@
 package com.github.vihaan.dutyboard.storage.file;
 
+import com.github.vihaan.dutyboard.storage.file.FileMessages;
 import com.github.vihaan.dutyboard.worker.Worker;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

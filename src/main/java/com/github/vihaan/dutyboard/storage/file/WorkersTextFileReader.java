@@ -1,5 +1,6 @@
 package com.github.vihaan.dutyboard.storage.file;
 
+import com.github.vihaan.dutyboard.storage.file.FileMessages;
 import com.github.vihaan.dutyboard.worker.Worker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

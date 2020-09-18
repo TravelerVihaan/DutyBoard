@@ -1,17 +1,16 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 @Entity
+@Table(name = "workers")
 public class WorkerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_worker")
     private Long id;
     @NotEmpty
     private String name;
