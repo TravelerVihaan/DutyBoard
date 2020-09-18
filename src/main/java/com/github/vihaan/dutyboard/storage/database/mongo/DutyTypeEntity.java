@@ -1,10 +1,12 @@
 package com.github.vihaan.dutyboard.storage.database.mongo;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Objects;
 
+@Profile("mongo-storage")
 @Document
 public class DutyTypeEntity {
 

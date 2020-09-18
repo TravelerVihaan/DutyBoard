@@ -1,5 +1,7 @@
 package com.github.vihaan.dutyboard.worker;
 
+import com.github.vihaan.dutyboard.worker.absence.Absence;
+
 import java.util.Objects;
 
 public class Worker {
@@ -7,11 +9,13 @@ public class Worker {
     private final String name;
     private final String surname;
     private String visibleName;
+    private Absence absence;
 
-    public Worker(String name, String surname, String visibleName) {
+    public Worker(String name, String surname, String visibleName, Absence absence) {
         this.name = name;
         this.surname = surname;
         this.visibleName = visibleName;
+        this.absence = absence;
     }
 
     public String getName() {
@@ -28,6 +32,14 @@ public class Worker {
 
     public void setVisibleName(String visibleName) {
         this.visibleName = visibleName;
+    }
+
+    public Absence getAbsence() {
+        return absence;
+    }
+
+    public void setAbsence(Absence absence) {
+        this.absence = absence;
     }
 
     @Override
@@ -50,6 +62,7 @@ public class Worker {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", visibleName='" + visibleName + '\'' +
+                ", absence=" + absence +
                 '}';
     }
 }
