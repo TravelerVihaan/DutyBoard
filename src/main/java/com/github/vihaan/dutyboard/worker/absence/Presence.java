@@ -9,4 +9,8 @@ public enum Presence {
     Presence(boolean isPresent) {
         this.presence = isPresent;
     }
+
+    boolean getPresence(){
+        return presence;
+    }
 }

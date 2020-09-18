@@ -10,4 +10,8 @@ public enum DutyType {
     DutyType(String description) {
         this.dutyType = description;
     }
+
+    String getDutyType() {
+        return dutyType;
+    }
 }

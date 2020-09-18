@@ -34,11 +34,11 @@ public class Worker {
         this.visibleName = visibleName;
     }
 
-    public Presence getAbsence() {
+    public Presence getPresence() {
         return presence;
     }
 
-    public void setAbsence(Presence presence) {
+    public void setPresence(Presence presence) {
         this.presence = presence;
     }
 
@@ -62,7 +62,7 @@ public class Worker {
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", visibleName='" + visibleName + '\'' +
-                ", absence=" + presence +
+                ", presence=" + presence +
                 '}';
     }
 }

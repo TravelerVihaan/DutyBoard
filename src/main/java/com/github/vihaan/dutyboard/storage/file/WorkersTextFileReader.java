@@ -1,6 +1,5 @@
 package com.github.vihaan.dutyboard.storage.file;
 
-import com.github.vihaan.dutyboard.storage.file.FileMessages;
 import com.github.vihaan.dutyboard.worker.Worker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +26,7 @@ public class WorkersTextFileReader implements IWorkersFileReader {
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
             stream.forEach(parsedWorkers::add);
         }catch (FileNotFoundException e){
-            logger.warn(FileMessages.FILE_NOT_FOUND);
+            logger.warn(com.github.vihaan.dutyboard.storage.file.FileMessages.FILE_NOT_FOUND);
         }catch (IOException e){
             logger.warn(FileMessages.IO_READ_PROBLEM);
         }
