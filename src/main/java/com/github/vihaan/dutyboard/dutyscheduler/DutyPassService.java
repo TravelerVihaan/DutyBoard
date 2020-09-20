@@ -1,6 +1,7 @@
 package com.github.vihaan.dutyboard.dutyscheduler;
 
 import com.github.vihaan.dutyboard.dutyboard.IBoard;
+import com.github.vihaan.dutyboard.worker.Worker;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
@@ -16,10 +17,7 @@ public class DutyPassService {
         }
     }
 
-    private void changeWorkerOnDuty(IBoard board){
-        if(!board.getWorkerIterator().hasNext()) {
-            board.setWorkersIterator(board.getAllWorkersOnBoard().iterator());
-        }
-        board.setActiveWorkerOnDuty(board.getWorkerIterator().next());
-        }
+    private void changeWorkerOnDuty(IBoard board) {
+        /// TODO
+    }
 }
