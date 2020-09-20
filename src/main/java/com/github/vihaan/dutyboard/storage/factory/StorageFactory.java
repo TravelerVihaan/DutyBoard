@@ -2,20 +2,37 @@ package com.github.vihaan.dutyboard.storage.factory;
 
 import com.github.vihaan.dutyboard.storage.Storage;
 import com.github.vihaan.dutyboard.storage.StorageType;
-import com.github.vihaan.dutyboard.storage.database.mongo.MongoStorage;
-import com.github.vihaan.dutyboard.storage.database.sql.sqlite.SQLiteStorage;
-import com.github.vihaan.dutyboard.storage.file.json.JsonFileStorage;
-import com.github.vihaan.dutyboard.storage.file.text.TextFileStorage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StorageFactory{
 
-    public static Storage createStorage(StorageType storageType){
+    private Storage textFileStorage;
+    private Storage jsonFileStorage;
+    private Storage sqliteStorage;
+    private Storage mongoStorage;
+
+    @Autowired
+    public StorageFactory(@Qualifier("text-storage") Storage textFileStorage,
+                          @Qualifier("json-storage") Storage jsonFileStorage,
+                          @Qualifier("sqlite-storage") Storage sqliteStorage,
+                          @Qualifier("mongo-storage") Storage mongoStorage
+                          ){
+        this.textFileStorage = textFileStorage;
+        this.jsonFileStorage = jsonFileStorage;
+        this.sqliteStorage = sqliteStorage;
+        this.mongoStorage = mongoStorage;
+    }
+
+    public Storage createStorage(StorageType storageType){
 
         return switch (storageType){
-            case TEXT -> new TextFileStorage();
-            case JSON -> new JsonFileStorage();
-            case SQLITE -> new SQLiteStorage();
-            case MONGO -> new MongoStorage();
+            case TEXT -> textFileStorage;
+            case JSON -> jsonFileStorage;
+            case SQLITE -> sqliteStorage;
+            case MONGO -> mongoStorage;
         };
     }
 }
