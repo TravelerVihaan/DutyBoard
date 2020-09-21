@@ -1,7 +1,6 @@
 package com.github.vihaan.dutyboard.storage.file.json;
 
 import com.github.vihaan.dutyboard.storage.file.FileReader;
-import com.github.vihaan.dutyboard.worker.Worker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,7 +14,7 @@ public class JsonFileReader implements FileReader {
     private String JSON_FILE_PATH;
 
     @Override
-    public List<Worker> loadWorkers() {
+    public List<String> loadWorkersRawData() {
         return Collections.emptyList(); // TODO
     }
 

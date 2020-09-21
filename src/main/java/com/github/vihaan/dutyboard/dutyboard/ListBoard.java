@@ -2,7 +2,7 @@ package com.github.vihaan.dutyboard.dutyboard;
 
 import com.github.vihaan.dutyboard.duty.DutyType;
 import com.github.vihaan.dutyboard.worker.Worker;
-import com.github.vihaan.dutyboard.worker.absence.Presence;
+import com.github.vihaan.dutyboard.worker.presence.Presence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,12 +1,10 @@
 package com.github.vihaan.dutyboard.storage.file;
 
-import com.github.vihaan.dutyboard.worker.Worker;
-
 import java.util.List;
 
 public interface FileReader {
 
-    List<Worker> loadWorkers();
+    List<String> loadWorkersRawData();
 
     String IO_READ_PROBLEM = "Problem occurred during reading data from file";
     String IO_WRITE_PROBLEM = "Problem occurred during writing data to file";
