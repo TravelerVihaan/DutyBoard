@@ -26,6 +26,8 @@ public class Worker {
         return surname;
     }
 
+    public String getFullName() { return getName() + " " + getSurname();}
+
     public String getVisibleName() {
         return visibleName;
     }

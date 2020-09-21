@@ -9,13 +9,13 @@ import java.util.Iterator;
 
 public interface IBoard{
 
-    Worker getActiveWorkerOnDuty();
+    Worker getCurrentWorker();
 
     void changeDuty();
 
-    Collection<Worker> getAllWorkersOnBoard();
-
     DutyType getTypeOfDuty();
 
-    Presence isNextWorkerPresent();
+    boolean isNextWorkerPresent(Worker worker);
+
+    Collection<Worker> getAllWorkersOnBoard();
 }

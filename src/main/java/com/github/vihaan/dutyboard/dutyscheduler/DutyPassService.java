@@ -18,6 +18,6 @@ public class DutyPassService {
     }
 
     private void changeWorkerOnDuty(IBoard board) {
-        /// TODO
+        board.changeDuty();
     }
 }

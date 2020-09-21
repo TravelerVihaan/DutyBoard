@@ -7,11 +7,11 @@ public enum DutyType {
 
     String dutyType;
 
-    DutyType(String description) {
-        this.dutyType = description;
+    DutyType(String dutyType) {
+        this.dutyType = dutyType;
     }
 
-    String getDutyType() {
+    public String getDutyType() {
         return dutyType;
     }
 }
