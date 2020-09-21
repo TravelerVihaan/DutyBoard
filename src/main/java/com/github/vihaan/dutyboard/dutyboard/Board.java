@@ -7,7 +7,7 @@ import com.github.vihaan.dutyboard.worker.absence.Presence;
 import java.util.Collection;
 import java.util.Iterator;
 
-public interface IBoard{
+public interface Board {
 
     Worker getCurrentWorker();
 

@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "dutyboard.storage.location.text",
+      "type": "java.lang.String",
+      "description": "Location of text file with workers data."
+    },
+    {
+      "name": "dutyboard.storage.location.json",
+      "type": "java.lang.String",
+      "description": "Location of JSON file with workers data."
+    }
+  ] }

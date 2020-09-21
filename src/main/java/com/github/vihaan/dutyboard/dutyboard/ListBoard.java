@@ -9,12 +9,10 @@ import org.slf4j.LoggerFactory;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ListBoard implements IBoard {
+public class ListBoard implements Board {
 
     private LinkedList<Worker> workersOnBoard;
     private final DutyType typeOfDuty;
-
-    Logger logger = LoggerFactory.getLogger(ListBoard.class);
 
     public ListBoard(List<Worker> workersOnBoard, DutyType typeOfDuty) {
         this.workersOnBoard = new LinkedList<>(workersOnBoard);
@@ -24,7 +22,7 @@ public class ListBoard implements IBoard {
     @Override
     public Worker getCurrentWorker() {
         Worker currentWorker = workersOnBoard.getLast();
-        logger.debug("Active worker on board: " + getTypeOfDuty().getDutyType() + " is " + currentWorker.getFullName() + ".");
+        LOGGER.debug("Active worker on board: " + getTypeOfDuty().getDutyType() + " is " + currentWorker.getFullName() + ".");
         return currentWorker;
     }
 
@@ -33,7 +31,7 @@ public class ListBoard implements IBoard {
         do{
             workersOnBoard.addFirst(getCurrentWorker());
         } while(isNextWorkerPresent(getCurrentWorker()));
-        logger.info(getCurrentWorker().getFullName() + " is on duty now.");
+        LOGGER.info(getCurrentWorker().getFullName() + " is on duty now.");
     }
 
     @Override
@@ -45,7 +43,7 @@ public class ListBoard implements IBoard {
     public boolean isNextWorkerPresent(Worker worker) {
         boolean isPresent = worker.getPresence() == Presence.PRESENT;
         if (!isPresent) {
-            logger.warn(worker.getFullName() + "absent. Duty check skips to the next employee.");
+            LOGGER.warn(worker.getFullName() + "absent. Duty check skips to the next employee.");
         }
         return isPresent;
     }
@@ -54,4 +52,6 @@ public class ListBoard implements IBoard {
     public List<Worker> getAllWorkersOnBoard() {
         return workersOnBoard;
     }
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ListBoard.class);
 }
