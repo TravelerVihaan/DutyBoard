@@ -12,7 +12,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TextFileReader implements FileReader {
@@ -25,21 +24,20 @@ public class TextFileReader implements FileReader {
     }
 
     public List<String> loadWorkersRawData(){
-        Optional<List<String>> workersData = Optional.ofNullable(readDataFromFile(this.storageProperties.getText()));
-        return workersData.orElseGet(Collections::emptyList);
+        return readDataFromFile(this.storageProperties.getText());
     }
 
     private List<String> readDataFromFile(String filePath){
-        List<String> dataFromFile = null;
+        List<String> dataFromFile = Collections.emptyList();
         File file = new File(filePath);
-        if(!file.exists()){
+        if(file.exists()) {
+            try {
+                dataFromFile = FileUtils.readLines(file, CHARSET_UTF8);
+            } catch (IOException e) {
+                LOGGER.error(IO_READ_PROBLEM);
+            }
+        }else{
             LOGGER.error(FILE_NOT_FOUND);
-            return dataFromFile;
-        }
-        try {
-            dataFromFile = FileUtils.readLines(file, CHARSET_UTF8);
-        } catch (IOException e) {
-            LOGGER.error(IO_READ_PROBLEM);
         }
         return dataFromFile;
     }

@@ -32,14 +32,11 @@ public class TextFileDataTransformer implements FileDataTransformer {
         String surname = props[1];
         String visibleName = props[2];
         String presenceText = props[3];
-        Worker worker = new Worker(name,surname,visibleName,null);
+        return new Worker(name,surname,visibleName,setWorkerPresence(presenceText));
+    }
 
-        if(Boolean.parseBoolean(presenceText))
-            worker.setPresence(Presence.PRESENT);
-        else
-            worker.setPresence(Presence.ABSENT);
-
-        return worker;
+    private Presence setWorkerPresence(String presenceText){
+        return Boolean.parseBoolean(presenceText) ? Presence.PRESENT : Presence.ABSENT;
     }
 
     private static final String CHAR_SPACE = " ";
