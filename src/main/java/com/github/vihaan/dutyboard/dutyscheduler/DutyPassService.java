@@ -11,9 +11,7 @@ public class DutyPassService {
 
     @Scheduled(cron = "0 0 9 * 3 ?")
     public void reloadActiveDuty() {
-        for(Board board : dutyBoards) {
-            changeWorkerOnDuty(board);
-        }
+        dutyBoards.forEach(this::changeWorkerOnDuty);
     }
 
     private void changeWorkerOnDuty(Board board) {
