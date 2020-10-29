@@ -16,6 +16,9 @@ public class DutyTypeEntity {
     @NotEmpty
     private String dutyType;
 
+    @OneToOne(mappedBy = "dutyType")
+    private BoardEntity board;
+
     public DutyTypeEntity() {}
     public DutyTypeEntity(Long id, String dutyType) {
         this.id = id;
@@ -36,6 +39,14 @@ public class DutyTypeEntity {
 
     public void setDutyType(String dutyType) {
         this.dutyType = dutyType;
+    }
+
+    public BoardEntity getBoard() {
+        return board;
+    }
+
+    public void setBoard(BoardEntity board) {
+        this.board = board;
     }
 
     @Override

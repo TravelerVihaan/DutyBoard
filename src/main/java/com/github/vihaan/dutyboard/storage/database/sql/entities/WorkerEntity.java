@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "workers")
@@ -23,6 +24,8 @@ public class WorkerEntity {
     @ManyToOne
     @JoinColumn(name="presence_id")
     private PresenceEntity presence;
+    @ManyToMany(mappedBy = "workers")
+    private Set<BoardEntity> boards;
 
     public WorkerEntity() { }
 
@@ -74,6 +77,14 @@ public class WorkerEntity {
 
     public void setPresence(PresenceEntity presence) {
         this.presence = presence;
+    }
+
+    public Set<BoardEntity> getBoards() {
+        return boards;
+    }
+
+    public void setBoards(Set<BoardEntity> boards) {
+        this.boards = boards;
     }
 
     @Override

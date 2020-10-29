@@ -6,11 +6,14 @@ import com.github.vihaan.dutyboard.storage.factory.StorageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 @Service
 public class BoardsService {
 
     private StorageFactory storageFactory;
     private Storage storage;
+    private Set<Board> boards;
 
     @Autowired
     public BoardsService(StorageFactory storageFactory){
@@ -19,5 +22,9 @@ public class BoardsService {
 
     public void getSpecificStorage(StorageType storageType){
         storage = storageFactory.createStorage(storageType);
+    }
+
+    void prepareBoardsFromStorage(){
+
     }
 }

@@ -1,6 +1,7 @@
 package com.github.vihaan.dutyboard.dutyscheduler;
 
 import com.github.vihaan.dutyboard.dutyboard.Board;
+import com.github.vihaan.dutyboard.dutyboard.BoardsService;
 import com.github.vihaan.dutyboard.storage.Storage;
 import com.github.vihaan.dutyboard.storage.factory.StorageFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,12 @@ import java.util.List;
 @Service
 public class DutyPassService {
 
-    private List<Board> dutyBoards;
+    private BoardsService boardsService;
+
+    @Autowired
+    private DutyPassService(BoardsService boardsService){
+        this.boardsService = boardsService;
+    }
 
     @Scheduled(cron = "0 0 9 * 3 ?")
     public void reloadActiveDuty() {
