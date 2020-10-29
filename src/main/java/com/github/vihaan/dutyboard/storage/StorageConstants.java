@@ -6,4 +6,5 @@ public interface StorageConstants {
      String JSON_FILE_STORAGE = "JSONFileStorage";
      String SQLITE_STORAGE = "SqliteStorage";
      String MONGO_STORAGE = "MongoStorage";
+    String MYSQL_STORAGE = "MySQLStorage";
 }
