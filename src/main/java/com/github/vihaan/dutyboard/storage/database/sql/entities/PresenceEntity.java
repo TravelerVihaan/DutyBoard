@@ -2,6 +2,7 @@ package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,6 +16,9 @@ public class PresenceEntity {
 
     @NotEmpty
     private boolean isPresent;
+
+    @OneToMany(mappedBy = "presence")
+    private List<WorkerEntity> workers;
 
     public PresenceEntity() { }
     public PresenceEntity(Long id, boolean isPresent) {
@@ -36,6 +40,14 @@ public class PresenceEntity {
 
     public void setPresent(boolean present) {
         isPresent = present;
+    }
+
+    public List<WorkerEntity> getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(List<WorkerEntity> workers) {
+        this.workers = workers;
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.github.vihaan.dutyboard.worker.presence.Presence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -49,9 +50,10 @@ public class ListBoard implements Board {
     }
 
     @Override
-    public List<Worker> getAllWorkersOnBoard() {
+    public Collection<Worker> getAllWorkersOnBoard() {
         return workersOnBoard;
     }
+
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ListBoard.class);
 }

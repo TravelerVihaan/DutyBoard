@@ -2,6 +2,7 @@ package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
@@ -18,13 +19,21 @@ public class WorkerEntity {
     private String surname;
     @NotEmpty
     private String visibleName;
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name="presence_id")
+    private PresenceEntity presence;
 
     public WorkerEntity() { }
-    public WorkerEntity(Long id, String name, String surname, String visibleName) {
-        this.id = id;
+
+    public WorkerEntity(@NotEmpty String name,
+                        @NotEmpty String surname,
+                        @NotEmpty String visibleName,
+                        @NotNull PresenceEntity presence) {
         this.name = name;
         this.surname = surname;
         this.visibleName = visibleName;
+        this.presence = presence;
     }
 
     public Long getId() {
@@ -59,6 +68,14 @@ public class WorkerEntity {
         this.visibleName = visibleName;
     }
 
+    public PresenceEntity getPresence() {
+        return presence;
+    }
+
+    public void setPresence(PresenceEntity presence) {
+        this.presence = presence;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,10 +94,11 @@ public class WorkerEntity {
     @Override
     public String toString() {
         return "WorkerEntity{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", visibleName='" + visibleName + '\'' +
+                ", presence=" + presence +
                 '}';
     }
 }
