@@ -1,11 +1,14 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
+import org.springframework.context.annotation.Profile;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 @Entity
 @Table(name = "duty_type")
+@Profile("sql-storage")
 public class DutyTypeEntity {
 
     @Id

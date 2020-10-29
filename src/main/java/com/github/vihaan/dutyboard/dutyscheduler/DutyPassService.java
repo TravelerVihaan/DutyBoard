@@ -22,7 +22,7 @@ public class DutyPassService {
 
     @Scheduled(cron = "0 0 9 * 3 ?")
     public void reloadActiveDuty() {
-        dutyBoards.forEach(this::changeWorkerOnDuty);
+        boardsService.getBoards().forEach(this::changeWorkerOnDuty);
     }
 
     private void changeWorkerOnDuty(Board board) {

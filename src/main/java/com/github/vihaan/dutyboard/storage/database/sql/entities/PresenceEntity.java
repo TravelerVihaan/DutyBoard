@@ -1,11 +1,14 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
+import org.springframework.context.annotation.Profile;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Profile("sql-storage")
 @Table(name = "presence")
 public class PresenceEntity {
 

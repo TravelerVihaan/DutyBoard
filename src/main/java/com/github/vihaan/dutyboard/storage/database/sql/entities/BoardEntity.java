@@ -1,12 +1,14 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
+import org.springframework.context.annotation.Profile;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
+@Profile("sql-storage")
 @Table(name = "boards")
 public class BoardEntity {
 
