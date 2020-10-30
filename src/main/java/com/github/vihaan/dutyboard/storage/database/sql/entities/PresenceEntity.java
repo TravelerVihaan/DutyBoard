@@ -18,6 +18,7 @@ public class PresenceEntity {
     private Long id;
 
     @NotEmpty
+    @Column(name = "presence_status", nullable = false)
     private boolean isPresent;
 
     @OneToMany(mappedBy = "presence")

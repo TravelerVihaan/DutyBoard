@@ -18,10 +18,13 @@ public class WorkerEntity {
     @Column(name = "id_worker")
     private Long id;
     @NotEmpty
+    @Column(nullable = false)
     private String name;
     @NotEmpty
+    @Column(nullable = false)
     private String surname;
     @NotEmpty
+    @Column(name = "visible_name", nullable = false, unique = true)
     private String visibleName;
     @NotNull
     @ManyToOne
@@ -31,7 +34,6 @@ public class WorkerEntity {
     private Set<BoardEntity> boards;
 
     public WorkerEntity() { }
-
     public WorkerEntity(@NotEmpty String name,
                         @NotEmpty String surname,
                         @NotEmpty String visibleName,

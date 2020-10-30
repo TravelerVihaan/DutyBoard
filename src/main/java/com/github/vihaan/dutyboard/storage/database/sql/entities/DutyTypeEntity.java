@@ -17,6 +17,7 @@ public class DutyTypeEntity {
     private Long id;
 
     @NotEmpty
+    @Column(name = "duty_type", unique = true, nullable = false)
     private String dutyType;
 
     @OneToOne(mappedBy = "dutyType")
