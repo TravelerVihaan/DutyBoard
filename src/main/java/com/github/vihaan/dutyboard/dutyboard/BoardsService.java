@@ -25,7 +25,7 @@ public class BoardsService {
     }
 
     void prepareBoardsFromStorage(){
-
+        boards = storage.getBoards();
     }
 
     public Set<Board> getBoards(){ return boards; }
