@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class StorageFactory{
 
-    private Storage textFileStorage;
-    private Storage jsonFileStorage;
-    private Storage sqliteStorage;
-    private Storage mongoStorage;
+    private final Storage textFileStorage;
+    private final Storage jsonFileStorage;
+    private final Storage sqliteStorage;
+    private final Storage mongoStorage;
 
     @Autowired
     public StorageFactory(@Qualifier("text-storage") Storage textFileStorage,

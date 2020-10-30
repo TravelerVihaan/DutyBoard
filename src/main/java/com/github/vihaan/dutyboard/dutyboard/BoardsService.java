@@ -11,7 +11,7 @@ import java.util.Set;
 @Service
 public class BoardsService {
 
-    private StorageFactory storageFactory;
+    private final StorageFactory storageFactory;
     private Storage storage;
     private Set<Board> boards;
 
@@ -20,11 +20,12 @@ public class BoardsService {
         this.storageFactory = storageFactory;
     }
 
-    public void getSpecificStorage(StorageType storageType){
+    private void getSpecificStorage(StorageType storageType){
         storage = storageFactory.createStorage(storageType);
     }
 
-    void prepareBoardsFromStorage(){
+    public void prepareBoardsFromStorage(StorageType storageType){
+        getSpecificStorage(storageType);
         boards = storage.getBoards();
     }
 
