@@ -16,7 +16,9 @@ public class BoardDocument {
     private String id;
     @NotNull
     private String dutyType;
+    @NotNull
     private WorkerDocument currentWorker;
+    @NotNull
     private List<WorkerDocument> workers;
 
     public BoardDocument() { }
