@@ -4,6 +4,9 @@ import com.github.vihaan.dutyboard.duty.DutyType;
 import com.github.vihaan.dutyboard.dutyboard.Board;
 import com.github.vihaan.dutyboard.storage.file.FileStorage;
 import com.github.vihaan.dutyboard.worker.Worker;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +14,6 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.BiPredicate;
-import java.util.function.Predicate;
 
 @Service
 @Qualifier("text-storage")
@@ -24,7 +26,7 @@ public class TextFileStorage implements FileStorage {
 
     @Override
     public Worker getWorkerByNameOrSurname(String name) throws IllegalArgumentException{
-        if(name == null){
+        if(StringUtils.isEmpty(name)){
             throw new IllegalArgumentException();
         }
         return null;
@@ -66,6 +68,8 @@ public class TextFileStorage implements FileStorage {
         return false;
     }
 
-    BiPredicate<Worker, String> nameComparision = (Worker worker, String name)
+    private final BiPredicate<Worker, String> nameComparison = (Worker worker, String name)
             -> worker.getSurname().equalsIgnoreCase(name) || worker.getFullName().equalsIgnoreCase(name);
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(TextFileStorage.class);
 }
