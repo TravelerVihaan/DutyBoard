@@ -1,7 +1,9 @@
 package com.github.vihaan.dutyboard.storage.file.text;
 
+import com.github.vihaan.dutyboard.dutyboard.Board;
 import com.github.vihaan.dutyboard.storage.file.FileReader;
 import com.github.vihaan.dutyboard.storage.properties.StorageProperties;
+import com.github.vihaan.dutyboard.worker.Worker;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +25,22 @@ public class TextFileReader implements FileReader {
         this.storageProperties = storageProperties;
     }
 
-    public List<String> loadWorkersRawData(){
+    public List<Worker> readWorkersData() {
+        return null;
+    }
+
+    public List<Board> readBoardsData(){
+        //FileUtils.
+        return null;
+    }
+
+
+    private List<String> loadRawData(){
         return readDataFromFile(this.storageProperties.getText());
+    }
+
+    private List<String> readRawWorkersData(List<String> fileLines){
+        return null;
     }
 
     private List<String> readDataFromFile(String filePath){

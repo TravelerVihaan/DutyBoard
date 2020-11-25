@@ -24,6 +24,7 @@ public class TextFileDataTransformer implements FileDataTransformer {
         if (splitData.length == WORKER_PROPS_NUMBER) {
             return Optional.of(mapToWorker(splitData));
         }
+        System.err.println("Incorrect data structure");
         return Optional.empty();
     }
 

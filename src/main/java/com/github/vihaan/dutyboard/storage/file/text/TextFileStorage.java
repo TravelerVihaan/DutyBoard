@@ -10,14 +10,25 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 @Service
 @Qualifier("text-storage")
 public class TextFileStorage implements FileStorage {
 
+    private Set<Worker> workersData;
+    private Set<Board> boardsData;
+
+    public TextFileStorage() { }
+
     @Override
-    public Worker getWorkerByNameOrSurname(String name) {
+    public Worker getWorkerByNameOrSurname(String name) throws IllegalArgumentException{
+        if(name == null){
+            throw new IllegalArgumentException();
+        }
         return null;
+        //workersData.stream().findFirst(worker -> worker.getSurname().equalsIgnoreCase(name) || worker.getFullName().equalsIgnoreCase(name));
     }
 
     @Override
@@ -54,4 +65,7 @@ public class TextFileStorage implements FileStorage {
     public boolean deleteWorker(Worker worker) {
         return false;
     }
+
+    BiPredicate<Worker, String> nameComparision = (Worker worker, String name)
+            -> worker.getSurname().equalsIgnoreCase(name) || worker.getFullName().equalsIgnoreCase(name);
 }
