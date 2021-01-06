@@ -9,8 +9,7 @@ This is light web app to control passing duty of presentations and test-checking
 * SpringBoot 2
 * Thymeleaf + HTML
 * Maven
-
-## DataSources
+* ##### DataSources:
 * MySQL
 * SQLite
 * MongoDB
