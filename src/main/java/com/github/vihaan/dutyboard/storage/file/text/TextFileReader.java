@@ -1,6 +1,7 @@
 package com.github.vihaan.dutyboard.storage.file.text;
 
 import com.github.vihaan.dutyboard.elements.dutyboard.Board;
+import com.github.vihaan.dutyboard.storage.file.FileDataTransformer;
 import com.github.vihaan.dutyboard.storage.file.FileReader;
 import com.github.vihaan.dutyboard.storage.properties.StorageProperties;
 import com.github.vihaan.dutyboard.elements.worker.Worker;
@@ -19,28 +20,27 @@ import java.util.List;
 public class TextFileReader implements FileReader {
 
     private final StorageProperties storageProperties;
+    private final FileDataTransformer textFileTransformer;
 
     @Autowired
-    public TextFileReader(StorageProperties storageProperties) {
+    public TextFileReader(StorageProperties storageProperties, FileDataTransformer textFileTransformer) {
         this.storageProperties = storageProperties;
+        this.textFileTransformer = textFileTransformer;
     }
 
     public List<Worker> readWorkersData() {
-        return null;
+        List<String> rawWorkersData = loadRawData();
+        return textFileTransformer.transformRawDataToWorkerObjects(rawWorkersData);
     }
 
     public List<Board> readBoardsData(){
-        //FileUtils.
+        List<String> rawBoardData = loadRawData();
         return null;
     }
 
 
     private List<String> loadRawData(){
         return readDataFromFile(this.storageProperties.getText());
-    }
-
-    private List<String> readRawWorkersData(List<String> fileLines){
-        return null;
     }
 
     private List<String> readDataFromFile(String filePath){

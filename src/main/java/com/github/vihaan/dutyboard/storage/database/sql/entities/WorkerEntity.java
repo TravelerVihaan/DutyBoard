@@ -28,10 +28,13 @@ public class WorkerEntity {
     private String visibleName;
     @NotNull
     @ManyToOne
-    @JoinColumn(name="presence_id")
+    @JoinColumn(name = "presence_id")
     private PresenceEntity presence;
     @ManyToMany(mappedBy = "workers")
     private Set<BoardEntity> boards;
+    @OneToMany(targetEntity = BoardEntity.class)
+    @Column(name = "boards_on_duty")
+    private Set<BoardEntity> boardsWhereIsCurrect;
 
     public WorkerEntity() { }
     public WorkerEntity(@NotEmpty String name,

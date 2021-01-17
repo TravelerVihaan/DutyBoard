@@ -12,6 +12,8 @@ import java.util.List;
 
 public class ListBoard implements Board {
 
+    private String boardName;
+    private String currentWorker;
     private LinkedList<Worker> workersOnBoard;
     private final DutyType typeOfDuty;
 

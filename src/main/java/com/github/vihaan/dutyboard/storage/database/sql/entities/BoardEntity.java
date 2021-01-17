@@ -1,5 +1,6 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 import org.springframework.context.annotation.Profile;
 
 import javax.persistence.*;
@@ -16,7 +17,11 @@ public class BoardEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_board")
     private Long id;
-
+    @NotNull
+    @Column(name = "board_name", unique = true, nullable = false)
+    private String boardName;
+    @ManyToOne
+    private WorkerEntity currectWorker;
     @ManyToMany
     @JoinTable(name = "boards_workers",
                 joinColumns = {@JoinColumn(name = "board_id",
@@ -24,7 +29,6 @@ public class BoardEntity {
                 inverseJoinColumns = {@JoinColumn(name= "worker_id",
                         referencedColumnName = "id_worker")})
     private List<WorkerEntity> workers;
-
     @NotNull
     @OneToOne
     @JoinColumn(name = "duty_type_id")

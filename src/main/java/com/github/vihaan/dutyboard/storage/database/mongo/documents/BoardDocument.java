@@ -1,6 +1,7 @@
 package com.github.vihaan.dutyboard.storage.database.mongo.documents;
 
 import org.springframework.context.annotation.Profile;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
@@ -14,6 +15,9 @@ public class BoardDocument {
 
     @Id
     private String id;
+    @NotNull
+    @Indexed(unique = true)
+    private String boardName;
     @NotNull
     private String dutyType;
     @NotNull
