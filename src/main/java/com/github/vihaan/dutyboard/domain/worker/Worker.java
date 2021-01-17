@@ -1,6 +1,6 @@
-package com.github.vihaan.dutyboard.elements.worker;
+package com.github.vihaan.dutyboard.domain.worker;
 
-import com.github.vihaan.dutyboard.elements.worker.presence.Presence;
+import com.github.vihaan.dutyboard.domain.worker.presence.Presence;
 
 import java.util.Objects;
 

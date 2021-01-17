@@ -1,8 +1,8 @@
 package com.github.vihaan.dutyboard.storage.file.text;
 
-import com.github.vihaan.dutyboard.elements.worker.Worker;
+import com.github.vihaan.dutyboard.domain.worker.Worker;
 import com.github.vihaan.dutyboard.storage.file.FileDataTransformer;
-import com.github.vihaan.dutyboard.storage.file.text.mapper.TextToObjectMapper;
+import com.github.vihaan.dutyboard.storage.file.TextToObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class TextFileDataTransformer implements FileDataTransformer {
 
     @Autowired
     public TextFileDataTransformer(
-            @Qualifier("worker-mapper") TextToObjectMapper<Worker> textToObjectMapper) {
+            @Qualifier("txt-worker-mapper") TextToObjectMapper<Worker> textToObjectMapper) {
         this.textToObjectMapper = textToObjectMapper;
     }
 

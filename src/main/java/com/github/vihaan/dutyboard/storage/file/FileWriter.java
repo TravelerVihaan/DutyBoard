@@ -1,6 +1,6 @@
 package com.github.vihaan.dutyboard.storage.file;
 
-import com.github.vihaan.dutyboard.elements.worker.Worker;
+import com.github.vihaan.dutyboard.domain.worker.Worker;
 
 import java.util.List;
 

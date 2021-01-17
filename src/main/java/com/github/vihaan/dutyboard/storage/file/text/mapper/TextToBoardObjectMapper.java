@@ -1,14 +1,24 @@
 package com.github.vihaan.dutyboard.storage.file.text.mapper;
 
-import com.github.vihaan.dutyboard.elements.dutyboard.Board;
-import com.github.vihaan.dutyboard.elements.worker.Worker;
+import com.github.vihaan.dutyboard.domain.dutyboard.Board;
+import com.github.vihaan.dutyboard.domain.worker.Worker;
+import com.github.vihaan.dutyboard.storage.Storage;
+import com.github.vihaan.dutyboard.storage.file.TextToObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
-@Qualifier("board-mapper")
-public class TextToBoardObjectMapper implements TextToObjectMapper<Board>  {
+@Qualifier("txt-board-mapper")
+public class TextToBoardObjectMapper implements TextToObjectMapper<Board> {
+
+    private final Storage dataStorage;
+
+    @Autowired
+    public TextToBoardObjectMapper(Storage dataStorage){
+        this.dataStorage = dataStorage;
+    }
 
     @Override
     public Board mapToObjects(String[] rawDataArray){
@@ -21,6 +31,7 @@ public class TextToBoardObjectMapper implements TextToObjectMapper<Board>  {
 
     private Collection<Worker> setCollectionFromRawData (String[] rawDataArray, String breaker){
         LinkedList<Worker> workersList = new LinkedList<>();
+
         int index = (rawDataArray.length > 3 ? 2 : 3);
         do{
 

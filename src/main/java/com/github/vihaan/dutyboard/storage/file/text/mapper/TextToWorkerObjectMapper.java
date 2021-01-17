@@ -1,12 +1,13 @@
 package com.github.vihaan.dutyboard.storage.file.text.mapper;
 
-import com.github.vihaan.dutyboard.elements.worker.Worker;
-import com.github.vihaan.dutyboard.elements.worker.presence.Presence;
+import com.github.vihaan.dutyboard.domain.worker.Worker;
+import com.github.vihaan.dutyboard.domain.worker.presence.Presence;
+import com.github.vihaan.dutyboard.storage.file.TextToObjectMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
-@Qualifier("worker-mapper")
+@Qualifier("txt-worker-mapper")
 public class TextToWorkerObjectMapper implements TextToObjectMapper<Worker> {
 
     @Override

@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.elements.dutyboard;
+package com.github.vihaan.dutyboard.domain.dutyboard;
 
 import com.github.vihaan.dutyboard.storage.Storage;
 import com.github.vihaan.dutyboard.storage.StorageType;

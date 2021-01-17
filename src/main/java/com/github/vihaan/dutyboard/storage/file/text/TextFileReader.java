@@ -1,10 +1,10 @@
 package com.github.vihaan.dutyboard.storage.file.text;
 
-import com.github.vihaan.dutyboard.elements.dutyboard.Board;
+import com.github.vihaan.dutyboard.domain.dutyboard.Board;
 import com.github.vihaan.dutyboard.storage.file.FileDataTransformer;
 import com.github.vihaan.dutyboard.storage.file.FileReader;
 import com.github.vihaan.dutyboard.storage.properties.StorageProperties;
-import com.github.vihaan.dutyboard.elements.worker.Worker;
+import com.github.vihaan.dutyboard.domain.worker.Worker;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

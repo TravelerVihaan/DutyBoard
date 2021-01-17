@@ -1,6 +1,5 @@
 package com.github.vihaan.dutyboard.storage.database.sql.entities;
 
-import com.github.vihaan.dutyboard.elements.worker.Worker;
 import org.springframework.context.annotation.Profile;
 
 import javax.persistence.*;

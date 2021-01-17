@@ -1,8 +1,8 @@
 package com.github.vihaan.dutyboard.storage;
 
-import com.github.vihaan.dutyboard.elements.duty.DutyType;
-import com.github.vihaan.dutyboard.elements.dutyboard.Board;
-import com.github.vihaan.dutyboard.elements.worker.Worker;
+import com.github.vihaan.dutyboard.domain.duty.DutyType;
+import com.github.vihaan.dutyboard.domain.dutyboard.Board;
+import com.github.vihaan.dutyboard.domain.worker.Worker;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -13,6 +13,8 @@ public interface Storage {
     Worker getWorkerByNameOrSurname(String name);
 
     Collection<Worker> getAllWorkers();
+
+    Worker getWorkerByName(String name);
 
     Set<Board> getBoards();
 

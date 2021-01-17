@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.elements.duty;
+package com.github.vihaan.dutyboard.domain.duty;
 
 public enum DutyType {
 

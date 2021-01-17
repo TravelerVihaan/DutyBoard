@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.storage.file.text.mapper;
+package com.github.vihaan.dutyboard.storage.file;
 
 public interface TextToObjectMapper<T> {
 
