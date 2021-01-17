@@ -46,7 +46,7 @@ public class ListBoard implements Board {
     public boolean isNextWorkerPresent(Worker worker) {
         boolean isPresent = worker.getPresence() == Presence.PRESENT;
         if (!isPresent) {
-            LOGGER.warn(worker.getFullName() + "absent. Duty check skips to the next employee.");
+            LOGGER.warn(worker.getFullName() + "is absent. Duty check skips to the next employee.");
         }
         return isPresent;
     }
