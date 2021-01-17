@@ -1,14 +1,10 @@
 package com.github.vihaan.dutyboard.dutyscheduler;
 
-import com.github.vihaan.dutyboard.dutyboard.Board;
-import com.github.vihaan.dutyboard.dutyboard.BoardsService;
-import com.github.vihaan.dutyboard.storage.Storage;
-import com.github.vihaan.dutyboard.storage.factory.StorageFactory;
+import com.github.vihaan.dutyboard.elements.dutyboard.Board;
+import com.github.vihaan.dutyboard.elements.dutyboard.BoardsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class DutyPassService {

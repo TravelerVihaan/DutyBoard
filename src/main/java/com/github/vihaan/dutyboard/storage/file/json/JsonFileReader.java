@@ -1,13 +1,12 @@
 package com.github.vihaan.dutyboard.storage.file.json;
 
-import com.github.vihaan.dutyboard.dutyboard.Board;
+import com.github.vihaan.dutyboard.elements.dutyboard.Board;
 import com.github.vihaan.dutyboard.storage.file.FileReader;
-import com.github.vihaan.dutyboard.worker.Worker;
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 
-import java.util.Collections;
 import java.util.List;
 
 public class JsonFileReader implements FileReader {

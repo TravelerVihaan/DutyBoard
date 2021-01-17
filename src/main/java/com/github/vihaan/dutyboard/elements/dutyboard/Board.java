@@ -1,7 +1,7 @@
-package com.github.vihaan.dutyboard.dutyboard;
+package com.github.vihaan.dutyboard.elements.dutyboard;
 
-import com.github.vihaan.dutyboard.duty.DutyType;
-import com.github.vihaan.dutyboard.worker.Worker;
+import com.github.vihaan.dutyboard.elements.duty.DutyType;
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 
 import java.util.Collection;
 

@@ -1,13 +1,13 @@
 package com.github.vihaan.dutyboard.storage.database.sql.mysql;
 
-import com.github.vihaan.dutyboard.duty.DutyType;
-import com.github.vihaan.dutyboard.dutyboard.Board;
+import com.github.vihaan.dutyboard.elements.duty.DutyType;
+import com.github.vihaan.dutyboard.elements.dutyboard.Board;
 import com.github.vihaan.dutyboard.storage.database.sql.SQLStorage;
 import com.github.vihaan.dutyboard.storage.database.sql.repositories.BoardJpaRepository;
 import com.github.vihaan.dutyboard.storage.database.sql.repositories.DutyTypeJpaRepository;
 import com.github.vihaan.dutyboard.storage.database.sql.repositories.PresenceJpaRepository;
 import com.github.vihaan.dutyboard.storage.database.sql.repositories.WorkerJpaRepository;
-import com.github.vihaan.dutyboard.worker.Worker;
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

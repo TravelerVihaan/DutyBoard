@@ -1,13 +1,12 @@
 package com.github.vihaan.dutyboard.storage.file.text;
 
+import com.github.vihaan.dutyboard.elements.worker.Worker;
+import com.github.vihaan.dutyboard.elements.worker.presence.Presence;
 import com.github.vihaan.dutyboard.storage.file.FileDataTransformer;
-import com.github.vihaan.dutyboard.worker.Worker;
-import com.github.vihaan.dutyboard.worker.presence.Presence;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class TextFileDataTransformer implements FileDataTransformer {
 
@@ -15,7 +14,7 @@ public class TextFileDataTransformer implements FileDataTransformer {
     public List<Worker> transformRawDataToWorkerObjects(List<String> rawDataList) {
         return rawDataList.stream()
                 .map(this::transformToWorker)
-                .flatMap( worker -> worker.stream().flatMap(Stream::of))
+                .flatMap(Optional::stream)
                 .collect(Collectors.toList());
     }
 

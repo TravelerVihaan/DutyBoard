@@ -1,7 +1,7 @@
 package com.github.vihaan.dutyboard.storage.file.text;
 
 import com.github.vihaan.dutyboard.storage.file.FileWriter;
-import com.github.vihaan.dutyboard.worker.Worker;
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 
 import java.util.List;
 

@@ -1,11 +1,11 @@
 package com.github.vihaan.dutyboard.storage.database.mongo;
 
-import com.github.vihaan.dutyboard.duty.DutyType;
-import com.github.vihaan.dutyboard.dutyboard.Board;
+import com.github.vihaan.dutyboard.elements.duty.DutyType;
+import com.github.vihaan.dutyboard.elements.dutyboard.Board;
 import com.github.vihaan.dutyboard.storage.Storage;
 import com.github.vihaan.dutyboard.storage.database.mongo.repositories.BoardMongoRepository;
 import com.github.vihaan.dutyboard.storage.database.mongo.repositories.WorkerMongoRepository;
-import com.github.vihaan.dutyboard.worker.Worker;
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.github.vihaan.dutyboard.storage.file.json;
 
 import com.github.vihaan.dutyboard.storage.file.FileDataTransformer;
-import com.github.vihaan.dutyboard.worker.Worker;
+import com.github.vihaan.dutyboard.elements.worker.Worker;
 
 import java.util.List;
 

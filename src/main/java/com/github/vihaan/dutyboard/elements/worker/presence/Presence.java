@@ -1,4 +1,4 @@
-package com.github.vihaan.dutyboard.worker.presence;
+package com.github.vihaan.dutyboard.elements.worker.presence;
 
 public enum Presence {
     PRESENT(true),
