@@ -11,18 +11,15 @@ public class StorageFactory{
 
     private final Storage textFileStorage;
     private final Storage jsonFileStorage;
-    private final Storage sqliteStorage;
     private final Storage mongoStorage;
 
     @Autowired
     public StorageFactory(@Qualifier("text-storage") Storage textFileStorage,
                           @Qualifier("json-storage") Storage jsonFileStorage,
-                          @Qualifier("sqlite-storage") Storage sqliteStorage,
                           @Qualifier("mongo-storage") Storage mongoStorage
                           ){
         this.textFileStorage = textFileStorage;
         this.jsonFileStorage = jsonFileStorage;
-        this.sqliteStorage = sqliteStorage;
         this.mongoStorage = mongoStorage;
     }
 
@@ -31,7 +28,6 @@ public class StorageFactory{
         return switch (storageType){
             case TEXT -> textFileStorage;
             case JSON -> jsonFileStorage;
-            case SQLITE -> sqliteStorage;
             case MONGO -> mongoStorage;
         };
     }
